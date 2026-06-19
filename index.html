@@ -8,6 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Canvas Confetti Library -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     
@@ -35,7 +40,7 @@
         }
 
         body {
-            font-family: var(--font-sans);
+            font-family: 'Playfair Display',serif;
             background: var(--light-bg);
             background-attachment: fixed;
             color: var(--text-dark);
@@ -92,7 +97,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-family: var(--font-alt);
+            font-family: 'Dancing Script', cursive;
             font-weight: 700;
             font-size: 0.75rem;
             letter-spacing: 1.5px;
@@ -124,8 +129,8 @@
         .hero-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(255, 240, 245, 0.75), rgba(255, 228, 225, 0.92)), 
-                        url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1976&auto=format&fit=crop') center/cover no-repeat;
+            background: linear-gradient(rgba(255, 240, 245, 0.75), rgba(255, 228, 225, 0.71)), 
+                        url('images/img3.jpeg') center/cover no-repeat;
             z-index: -2;
             transform: scale(1.05);
             animation: slowPan 25s ease-in-out infinite alternate;
@@ -137,9 +142,9 @@
         }
 
         .hero-title {
-            font-family: var(--font-display);
+font-family: 'Dancing Script', cursive;
             font-weight: 800;
-            font-size: 5rem;
+            font-size: 6rem;
             color: transparent;
             background: linear-gradient(135deg, #3D222C, var(--pink-accent), var(--rose-gold));
             -webkit-background-clip: text;
@@ -150,8 +155,8 @@
         }
 
         .hero-subtitle {
-            font-family: var(--font-sans);
-            font-size: 1.25rem;
+font-family: 'Dancing Script', cursive;
+            font-size: 1.55rem;
             font-weight: 400;
             color: var(--text-muted);
             margin-bottom: 45px;
@@ -161,15 +166,13 @@
         }
 
         .cta-btn {
-            font-family: var(--font-alt);
+            font-family:  sans;
             background: linear-gradient(135deg, var(--pink-accent), #E54B88);
             color: #fff;
             border: none;
             padding: 18px 45px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 1rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(255, 101, 163, 0.2);
@@ -207,13 +210,12 @@
         }
 
         .nav-tab {
-            font-family: var(--font-alt);
+            font-family: 'Dancing Script',cursive;
             background: transparent;
             border: 1px solid transparent;
             padding: 10px 24px;
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
             cursor: pointer;
@@ -252,12 +254,12 @@
 
         /* --- TAB 1: MEDIA GALLERY --- */
         .media-intro h2 {
-            font-family: var(--font-display);
+            font-family: 'Pacifico', cursive;
             color: var(--text-dark);
             font-size: 2.8rem;
             margin-bottom: 12px;
             text-align: center;
-            font-weight: 800;
+            font-weight: 700;
         }
 
         .showcase-grid {
@@ -330,8 +332,8 @@
             background: var(--surface-light);
             border-top: 1px solid rgba(255, 101, 163, 0.08);
             color: var(--text-dark);
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
+            font-family: 'Satisfy', cursive;
+            font-size: 1rem;
             line-height: 1.6;
             font-weight: 500;
         }
@@ -420,7 +422,7 @@
             margin-top: 20px;
             font-size: 1.1rem;
             font-weight: 500;
-            font-family: var(--font-sans);
+            font-family: 'Satisfy', cursive;
             letter-spacing: -0.2px;
             width: 100%;
         }
@@ -438,7 +440,7 @@
         }
 
         .message-title {
-            font-family: var(--font-display);
+            font-family:'Satisfy', cursive;
             font-size: 3.2rem;
             color: var(--text-dark);
             margin-bottom: 30px;
@@ -448,8 +450,8 @@
         }
 
         .typewriter-text-box {
-            font-family: var(--font-sans);
-            font-size: 1.2rem;
+            font-family: 'Dancing Script',cursive;
+            font-size: 1.7rem;
             line-height: 2;
             font-weight: 500;
             color: #4A333C;
@@ -468,7 +470,7 @@
         }
 
         .game-header {
-            font-family: var(--font-alt);
+            font-family: 'Satisfy', cursive;
             color: var(--text-dark);
             font-weight: 700;
             font-size: 1rem;
@@ -483,7 +485,7 @@
         }
 
         .premium-opt-btn {
-            font-family: var(--font-sans);
+            font-family:'Dancing Script',cursive;
             background: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(255, 101, 163, 0.15);
             color: var(--text-dark);
@@ -522,7 +524,7 @@
         }
 
         .vault-btn {
-            font-family: var(--font-alt);
+            font-family: 'Dancing Script',cursive;
             background: transparent;
             color: var(--pink-accent);
             border: 2px solid var(--pink-accent);
@@ -576,7 +578,6 @@
             align-items: center;
             justify-content: center;
             /* 🚀 Added requested margin top spacing */
-            margin-top: 40px;
         }
 
         .vault-popup-modal.active .vault-popup-content {
@@ -610,10 +611,10 @@
         }
 
         .vault-popup-title {
-            font-family: var(--font-display);
-            font-size: 2.4rem;
+            font-family:  'Dancing Script',cursive;
+            font-size: 1.4rem;
             margin-bottom: 8px;
-            font-weight: 800;
+            font-weight: 700;
             background: linear-gradient(135deg, #ffffff, var(--pink-accent));
             -webkit-background-clip: text;
             background-clip: text;
@@ -621,9 +622,9 @@
         }
 
         .vault-popup-text {
-            font-family: var(--font-sans);
+            font-family: 'Dancing Script',cursive;
             font-size: 1.1rem;
-            line-height: 1.6;
+            
             color: rgba(255, 255, 255, 0.75);
             font-weight: 400;
         }
@@ -669,7 +670,7 @@
 </audio>
 
 <div id="music-control" onclick="toggleMusic()">
-    <span id="music-icon">🎵</span> <span id="music-text">PLAY MELODY</span>
+    <span id="music-icon">🎵</span> 
 </div>
 
 <script>
@@ -700,7 +701,7 @@
     <!-- 🌟 HERO ENTRANCE SCREEN -->
     <section id="landing-screen">
         <div class="hero-bg"></div>
-        <h1 class="hero-title">Happy Birthday Ammu ❤️</h1>
+        <h1 class="hero-title">Happy Birthday Ammuuuuu ❤️</h1>
         <p class="hero-subtitle">To the most incredible person in my world. Here's a curated digital archive celebrating you.</p>
         <button class="cta-btn" onclick="unlockApp()">Explore the Experience ✨</button>
     </section>
@@ -708,10 +709,10 @@
     <!-- 💻 INNER HUB -->
     <main id="inner-dashboard">
         <nav class="inner-nav">
-            <button class="nav-tab active" onclick="switchTab(event, 'tab-showcase')">🖼️ Gallery & Videos</button>
-            <button class="nav-tab" onclick="switchTab(event, 'tab-letter')">💌 Message</button>
-            <button class="nav-tab" onclick="switchTab(event, 'tab-games')">🎮 Interactive</button>
-            <button class="nav-tab" onclick="switchTab(event, 'tab-vault')">🎁 The Vault</button>
+            <button class="nav-tab active" onclick="switchTab(event, 'tab-showcase')">Gallery & Videos</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-letter')"> Message</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-games')"> Interactive</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-vault')"> The Vault</button>
         </nav>
 
         <div class="content-container">
@@ -726,9 +727,9 @@
                 <div class="showcase-grid">
                     <!-- Video Card 1 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'video')">
-                        <div class="media-wrapper">
-                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-girl-blowing-out-birthday-candles-34444-large.mp4">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-girl-blowing-out-birthday-candles-34444-large.mp4" type="video/mp4">
+                    <div class="media-wrapper">
+                            <video autoplay loop muted playsinline data-src="images/vid1.mp4">
+                                <source src="images/vid1.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="media-overlay-details">
@@ -739,7 +740,7 @@
                     <!-- Photo Card 1 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
                         <div class="media-wrapper">
-                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600" data-src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200" alt="Sister Image">
+                            <img src="images/img11.jpeg" data-src="images/img11.jpeg" alt="Sister Image">
                         </div>
                         <div class="media-overlay-details">
                             <p>The nostalgic throwback memory 📸</p>
@@ -749,7 +750,7 @@
                     <!-- Photo Card 2 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
                         <div class="media-wrapper">
-                            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600" data-src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200" alt="Sister Image">
+                            <img src="images/img1.jpeg" data-src="images/img1.jpeg" alt="Sister Image">
                         </div>
                         <div class="media-overlay-details">
                             <p>Radiating peak elegance 💎</p>
@@ -759,8 +760,8 @@
                     <!-- Video Card 2 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'video')">
                         <div class="media-wrapper">
-                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-holding-a-sparkler-at-a-party-40432-large.mp4">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-a-sparkler-at-a-party-40432-large.mp4" type="video/mp4">
+                            <video autoplay loop muted playsinline data-src="images/vid2.mp4">
+                                <source src="images/vid2.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="media-overlay-details">
@@ -771,7 +772,7 @@
                     <!-- Photo Card 3 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
                         <div class="media-wrapper">
-                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600" data-src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200" alt="Sister Image">
+                            <img src="images/img13.jpeg" data-src="images/img13.jpeg" alt="Sister Image">
                         </div>
                         <div class="media-overlay-details">
                             <p>Unstoppable smiles and infinite laughter 🌸</p>
@@ -781,8 +782,8 @@
                     <!-- Video Card 3 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'video')">
                         <div class="media-wrapper">
-                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-gold-confetti-falling-slowly-on-a-black-background-40541-large.mp4">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-gold-confetti-falling-slowly-on-a-black-background-40541-large.mp4" type="video/mp4">
+                            <video autoplay loop muted playsinline data-src="images/vid3.mp4">
+                                <source src="images/vid3.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="media-overlay-details">
@@ -793,7 +794,7 @@
                     <!-- Photo Card 4 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
                         <div class="media-wrapper">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200" alt="Sister Image">
+                            <img src="images/img14.jpeg" data-src="images/img14.jpeg" alt="Sister Image">
                         </div>
                         <div class="media-overlay-details">
                             <p>Making magical layouts and beautiful days 💖</p>
@@ -803,12 +804,28 @@
                     <!-- Video Card 4 -->
                     <div class="premium-media-card" onclick="openLightbox(this, 'video')">
                         <div class="media-wrapper">
-                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-clinking-glasses-of-champagne-at-a-party-40431-large.mp4">
-                                <source src="https://assets.mixkit.co/videos/preview/mixkit-clinking-glasses-of-champagne-at-a-party-40431-large.mp4" type="video/mp4">
+                            <video autoplay loop muted playsinline data-src="images/vid4.mp4">
+                                <source src="images/vid4.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="media-overlay-details">
                             <p>To more adventures and unmatched memories 🚀</p>
+                        </div>
+                    </div>
+                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="images/img6.jpeg" data-src="images/img6.jpeg" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Unforgettable moments💖</p>
+                        </div>
+                    </div>
+                     <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="images/img8.jpeg" data-src="images/img8.jpeg" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Always in my heart 💖💖</p>
                         </div>
                     </div>
                 </div>
@@ -882,11 +899,11 @@
                     <button class="vault-back-arrow-icon" onclick="closeVaultPopup()" title="Go Back">←</button>
                     
                     <!-- Single Big Animated Image Frame with Unclipped Scaled Dimensions -->
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200" alt="Ammu's Elegant Birthday Highlight Layout">
+                    <img src="images/img4.jpeg" alt="Ammu's Elegant Birthday Highlight Layout">
 
                     <!-- Caption Details underneath the layout -->
                     <div class="vault-popup-caption-box">
-                        <h3 class="vault-popup-title">Cheers to You, Ammu! 🥂✨</h3>
+                        <h3 class="vault-popup-title">Cheers to You, Chechiiii! 🥂✨</h3>
                         <p class="vault-popup-text">
                             May your birthday be filled with endless light, joy, and monumental milestones. Thank you for being the absolute best sister anyone could ever ask for. I've always got your back through thick and thin! ❤️
                         </p>
