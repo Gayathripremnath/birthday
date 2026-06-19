@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ammu! ✨</title>
+    <!-- Google Fonts for Ultra-Stylish Geometric and Serif Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        :root {
+            /* Soft, Light Pink & Contemporary Rose Palette */
+            --rose-gold: #B6835C;
+            --pink-accent: #FF65A3;
+            --pink-glow: rgba(255, 101, 163, 0.12);
+            --light-bg: linear-gradient(135deg, #FFF0F5 0%, #FFE4E1 50%, #FFF5F7 100%);
+            --surface-light: #ffffff;
+            --text-dark: #3D222C;
+            --text-muted: #6B525B;
+            
+            /* High-End Typography Variables */
+            --font-display: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --font-alt: 'Montserrat', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--light-bg);
+            background-attachment: fixed;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        /* --- ✨ DYNAMIC FLOATING BIRTHDAY EMOJIS BACKGROUND --- */
+        .emoji-bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .ambient-emoji {
+            position: absolute;
+            bottom: -50px;
+            font-size: 1.5rem;
+            opacity: 0;
+            animation: floatUpward 9s linear infinite;
+        }
+
+        @keyframes floatUpward {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% {
+                transform: translateY(-105vh) translateX(70px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* --- LUXURY AUDIO CONTROLLER --- */
+        #music-control {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 2000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 12px 22px;
+            border-radius: 40px;
+            box-shadow: 0 8px 30px rgba(255, 101, 163, 0.12);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-alt);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 101, 163, 0.2);
+            color: var(--pink-accent);
+        }
+        #music-control:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 35px var(--pink-glow);
+        }
+
+        /* --- 1. HERO LANDING SCREEN --- */
+        #landing-screen {
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(255, 240, 245, 0.75), rgba(255, 228, 225, 0.92)), 
+                        url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1976&auto=format&fit=crop') center/cover no-repeat;
+            z-index: -2;
+            transform: scale(1.05);
+            animation: slowPan 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowPan {
+            0% { transform: scale(1.05) translate(0, 0); }
+            100% { transform: scale(1.12) translate(-1%, -1%); }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 5rem;
+            color: transparent;
+            background: linear-gradient(135deg, #3D222C, var(--pink-accent), var(--rose-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            text-shadow: 0 10px 30px rgba(255, 101, 163, 0.1);
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 45px;
+            max-width: 600px;
+            line-height: 1.8;
+            letter-spacing: -0.2px;
+        }
+
+        .cta-btn {
+            font-family: var(--font-alt);
+            background: linear-gradient(135deg, var(--pink-accent), #E54B88);
+            color: #fff;
+            border: none;
+            padding: 18px 45px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 101, 163, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 101, 163, 0.35);
+        }
+
+        /* --- 2. THE MAIN HUB INTERFACE --- */
+        #inner-dashboard {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: transparent;
+            display: grid;
+            grid-template-rows: auto 1fr;
+            transform: translateY(100vh);
+            transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+            z-index: 90;
+        }
+
+        .inner-nav {
+            background: rgba(255, 240, 245, 0.92);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 101, 163, 0.12);
+            overflow-x: auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-tab {
+            font-family: var(--font-alt);
+            background: transparent;
+            border: 1px solid transparent;
+            padding: 10px 24px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab.active {
+            color: #fff;
+            background: var(--pink-accent);
+            border-color: var(--pink-accent);
+            box-shadow: 0 4px 15px rgba(255, 101, 163, 0.2);
+        }
+
+        .content-container {
+            padding: 40px 25px;
+            overflow-y: auto;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .tab-panel {
+            display: none;
+            animation: fadeInPremium 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .tab-panel.active { display: block; }
+
+        @keyframes fadeInPremium {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- TAB 1: MEDIA GALLERY --- */
+        .media-intro h2 {
+            font-family: var(--font-display);
+            color: var(--text-dark);
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .premium-media-card {
+            background: var(--surface-light);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 101, 163, 0.15);
+            box-shadow: 0 10px 30px rgba(74, 40, 52, 0.04);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .media-wrapper {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+            background: #fff5f7;
+        }
+
+        .media-wrapper::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            font-size: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 2;
+        }
+
+        .premium-media-card:hover .media-wrapper::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .premium-media-card video, .premium-media-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .premium-media-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(74, 40, 52, 0.08), 0 0 25px rgba(255, 101, 163, 0.15);
+            border-color: var(--pink-accent);
+        }
+
+        .premium-media-card:hover .media-wrapper img,
+        .premium-media-card:hover .media-wrapper video {
+            transform: scale(1.05);
+        }
+
+        .media-overlay-details {
+            padding: 20px;
+            background: var(--surface-light);
+            border-top: 1px solid rgba(255, 101, 163, 0.08);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* --- 🖼️ MODERN LIGHTBOX MODAL --- */
+        .lightbox-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(15, 6, 10, 0.97);
+            backdrop-filter: blur(25px);
+            z-index: 5000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content-container {
+            width: 92vw;
+            max-width: 1100px;
+            position: relative;
+            transform: scale(0.92);
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-modal.active .lightbox-content-container {
+            transform: scale(1);
+        }
+
+        .lightbox-content-container img, 
+        .lightbox-content-container video {
+            width: auto;
+            height: auto;
+            max-width: 90vw;
+            max-height: 75vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* 🎯 Circular Dynamic Back Buttons */
+        .lightbox-back-btn, .vault-back-arrow-icon {
+            position: absolute;
+            top: 50%;
+            left: -75px;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-size: 1.6rem;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            z-index: 10;
+        }
+        
+        .lightbox-back-btn:hover, .vault-back-arrow-icon:hover {
+            background: #ffffff;
+            color: var(--text-dark);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 101, 163, 0.4);
+        }
+
+        .lightbox-caption {
+            color: rgba(255,255,255,0.95);
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            font-family: var(--font-sans);
+            letter-spacing: -0.2px;
+            width: 100%;
+        }
+
+        /* --- 💌 TAB 2: MESSAGE VIEW --- */
+        .simple-message-container {
+            max-width: 750px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 60px 50px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 101, 163, 0.15);
+            box-shadow: 0 20px 50px rgba(74, 40, 52, 0.05);
+            position: relative;
+        }
+
+        .message-title {
+            font-family: var(--font-display);
+            font-size: 3.2rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .typewriter-text-box {
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            line-height: 2;
+            font-weight: 500;
+            color: #4A333C;
+            letter-spacing: -0.1px;
+            min-height: 150px;
+        }
+
+        /* --- TAB 3: INTERACTIVE ZONE --- */
+        .premium-game-card {
+            background: var(--surface-light);
+            padding: 35px;
+            border: 1px solid rgba(255, 101, 163, 0.12);
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(74, 40, 52, 0.04);
+            border-radius: 16px;
+        }
+
+        .game-header {
+            font-family: var(--font-alt);
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .option-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .premium-opt-btn {
+            font-family: var(--font-sans);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 101, 163, 0.15);
+            color: var(--text-dark);
+            padding: 16px 24px;
+            text-align: left;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 12px;
+        }
+
+        .premium-opt-btn:hover {
+            border-color: var(--pink-accent);
+            background: rgba(255, 101, 163, 0.03);
+        }
+
+        .premium-opt-btn.correct { background: #d4edda !important; border-color: #28a745 !important; color: #155724 !important; }
+        .premium-opt-btn.wrong { background: #f8d7da !important; border-color: #dc3545 !important; color: #721c24 !important; }
+
+        .split-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* --- TAB 4: THE VAULT --- */
+        .vault-box {
+            text-align: center;
+            background: var(--surface-light);
+            border: 1px solid rgba(255, 101, 163, 0.2);
+            padding: 50px 40px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(74, 40, 52, 0.04);
+        }
+
+        .vault-btn {
+            font-family: var(--font-alt);
+            background: transparent;
+            color: var(--pink-accent);
+            border: 2px solid var(--pink-accent);
+            padding: 20px 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s;
+            margin-top: 20px;
+        }
+
+        .vault-btn:hover {
+            background: var(--pink-accent);
+            color: #4a4646;
+            box-shadow: 0 0 35px var(--pink-glow);
+            transform: scale(1.02);
+        }
+
+        /* --- 🎁 VAULT SURPRISE POPUP MODAL --- */
+        .vault-popup-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(15, 6, 10, 0.97);
+            backdrop-filter: blur(25px);
+            z-index: 6000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .vault-popup-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .vault-popup-content {
+            width: 92vw;
+            max-width: 1300px;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* 🚀 Added requested margin top spacing */
+            margin-top: 40px;
+        }
+
+        .vault-popup-modal.active .vault-popup-content {
+            transform: scale(1);
+        }
+
+        .vault-popup-content img {
+            width: auto;
+            height: auto;
+            max-width: 90vw;
+            max-height: 70vh;margin-top: 100px;
+            object-fit: contain;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.85), 0 0 50px rgba(255, 101, 163, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: modernPulse 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes modernPulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.015); }
+        }
+
+        .vault-popup-caption-box {
+            color: rgba(255, 255, 255, 0.95);
+            text-align: center;
+            margin-top: 25px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        .vault-popup-title {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, var(--pink-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .vault-popup-text {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 400;
+        }
+
+        @media(max-width: 992px) {
+            .lightbox-back-btn, .vault-back-arrow-icon {
+                top: -65px;
+                left: 0;
+                transform: none;
+                width: 46px;
+                height: 46px;
+                font-size: 1.3rem;
+            }
+            .lightbox-content-container, .vault-popup-content {
+                margin-top: 50px;
+            }
+            .lightbox-content-container img, .lightbox-content-container video, .vault-popup-content img {
+                max-height: 65vh;
+                max-width: 85vw;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .hero-title { font-size: 3.2rem; }
+            .message-title { font-size: 2.3rem; }
+            .simple-message-container { padding: 40px 25px; }
+            .split-box { grid-template-columns: 1fr; }
+            .inner-nav { justify-content: flex-start; }
+            .vault-popup-title { font-size: 1.8rem; }
+            .vault-popup-text { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🌸 FLOATING PASTEL EMOJIS -->
+    <div class="emoji-bg-container" id="ambient-emoji-wrapper"></div>
+
+    <!-- 🎵 AUDIO CONTROLLER -->
+<!-- 🎵 UPDATED: Reliable Soft Instrumental Track -->
+<audio id="bg-music" loop>
+  <source src="bday.mp3" type="audio/mp3">
+</audio>
+
+<div id="music-control" onclick="toggleMusic()">
+    <span id="music-icon">🎵</span> <span id="music-text">PLAY MELODY</span>
+</div>
+
+<script>
+    function toggleMusic() {
+        const audio = document.getElementById("bg-music");
+        const text = document.getElementById("music-text");
+        const icon = document.getElementById("music-icon");
+
+        if (audio.paused) {
+            // Browsers require user interaction before playing audio
+            audio.play()
+                .then(() => {
+                    text.innerText = "PAUSE MELODY";
+                    icon.innerText = "⏸️";
+                })
+                .catch(err => {
+                    console.error("Audio playback failed:", err);
+                    alert("Please interact with the page (click anywhere) to enable the melody.");
+                });
+        } else {
+            audio.pause();
+            text.innerText = "PLAY MELODY";
+            icon.innerText = "🎵";
+        }
+    }
+</script>
+
+    <!-- 🌟 HERO ENTRANCE SCREEN -->
+    <section id="landing-screen">
+        <div class="hero-bg"></div>
+        <h1 class="hero-title">Happy Birthday Ammu ❤️</h1>
+        <p class="hero-subtitle">To the most incredible person in my world. Here's a curated digital archive celebrating you.</p>
+        <button class="cta-btn" onclick="unlockApp()">Explore the Experience ✨</button>
+    </section>
+
+    <!-- 💻 INNER HUB -->
+    <main id="inner-dashboard">
+        <nav class="inner-nav">
+            <button class="nav-tab active" onclick="switchTab(event, 'tab-showcase')">🖼️ Gallery & Videos</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-letter')">💌 Message</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-games')">🎮 Interactive</button>
+            <button class="nav-tab" onclick="switchTab(event, 'tab-vault')">🎁 The Vault</button>
+        </nav>
+
+        <div class="content-container">
+            
+            <!-- 🖼️ TAB 1: MEDIA GRID -->
+            <div id="tab-showcase" class="tab-panel active">
+                <div class="media-intro">
+                    <h2>Our Media Archive ✨</h2>
+                    <p style="color: var(--text-muted); text-align: center; margin-top: 10px;">Click any image or video to view it in gorgeous full screen.</p>
+                </div>
+                
+                <div class="showcase-grid">
+                    <!-- Video Card 1 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'video')">
+                        <div class="media-wrapper">
+                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-girl-blowing-out-birthday-candles-34444-large.mp4">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-girl-blowing-out-birthday-candles-34444-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Live, laugh, layout! Always matching the dynamic energy 🎬</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 1 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600" data-src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>The nostalgic throwback memory 📸</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 2 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600" data-src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Radiating peak elegance 💎</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 2 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'video')">
+                        <div class="media-wrapper">
+                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-holding-a-sparkler-at-a-party-40432-large.mp4">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-holding-a-sparkler-at-a-party-40432-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Lighting up every space you step into ✨</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 3 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600" data-src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Unstoppable smiles and infinite laughter 🌸</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 3 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'video')">
+                        <div class="media-wrapper">
+                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-gold-confetti-falling-slowly-on-a-black-background-40541-large.mp4">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-gold-confetti-falling-slowly-on-a-black-background-40541-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Celebrating you today, tomorrow, and always 🥂</p>
+                        </div>
+                    </div>
+
+                    <!-- Photo Card 4 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'image')">
+                        <div class="media-wrapper">
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600" data-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200" alt="Sister Image">
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>Making magical layouts and beautiful days 💖</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Card 4 -->
+                    <div class="premium-media-card" onclick="openLightbox(this, 'video')">
+                        <div class="media-wrapper">
+                            <video autoplay loop muted playsinline data-src="https://assets.mixkit.co/videos/preview/mixkit-clinking-glasses-of-champagne-at-a-party-40431-large.mp4">
+                                <source src="https://assets.mixkit.co/videos/preview/mixkit-clinking-glasses-of-champagne-at-a-party-40431-large.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="media-overlay-details">
+                            <p>To more adventures and unmatched memories 🚀</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🔒 LIGHTBOX MODAL -->
+            <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+                <div class="lightbox-content-container" onclick="event.stopPropagation()">
+                    <button class="lightbox-back-btn" onclick="closeLightbox()" title="Go Back">←</button>
+                    <div id="lightboxMediaVault" style="display:contents;"></div>
+                    <div class="lightbox-caption" id="lightboxCaption"></div>
+                </div>
+            </div>
+
+            <!-- 💌 TAB 2: MESSAGE VIEW -->
+            <div id="tab-letter" class="tab-panel">
+                <div class="simple-message-container">
+                    <h2 class="message-title">To My Built-In Best Friend...</h2>
+                    <div class="typewriter-text-box">
+                        <span id="typed-text"></span><span style="color:var(--pink-accent); font-weight:bold; animation: blink 0.8s infinite;">|</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🎮 TAB 3: GAME STACK -->
+            <div id="tab-games" class="tab-panel">
+                <div class="premium-game-card">
+                    <div class="game-header">🧠 QUIZ: HOW WELL DO YOU KNOW YOUR SIBLING?</div>
+                    <div id="quiz-box">
+                        <p id="quiz-question" style="margin-bottom:20px; font-weight:600; font-family:var(--font-sans);"></p>
+                        <div class="option-stack" id="quiz-options"></div>
+                    </div>
+                </div>
+
+                <div class="premium-game-card">
+                    <div class="game-header">🎭 THIS OR THAT: WHAT IS YOUR ABSOLUTE GO-TO?</div>
+                    <div class="split-box">
+                        <button class="premium-opt-btn" style="text-align:center" onclick="runVerdict('Correct! Tea rules your world! ☕')">Tea ☕</button>
+                        <button class="premium-opt-btn" style="text-align:center" onclick="runVerdict('You like coffee, but everyone knows you need tea first! 😂')">Coffee ☕</button>
+                    </div>
+                    <div id="verdict-box" style="text-align:center; color:var(--pink-accent); margin-top:20px; font-weight:700; font-family:var(--font-sans);"></div>
+                </div>
+
+                <div class="premium-game-card">
+                    <div class="game-header">🤷 CORNER OF TRUTH</div>
+                    <div class="option-stack">
+                        <button class="premium-opt-btn" onclick="this.innerHTML='Definitely YOU! 🎭 Nobody handles simple situations with more elegant flair.'; this.style.borderColor='var(--pink-accent)'">
+                            🤷‍♂️ Who is more dramatic? (Click to reveal the truth)
+                        </button>
+                        <button class="premium-opt-btn" onclick="this.innerHTML='You! You can smell hidden snacks from a mile away in under 3 seconds. 🍕'; this.style.borderColor='var(--pink-accent)'">
+                            🍿 Who finishes all the household snacks first?
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 🎁 TAB 4: THE VAULT -->
+            <div id="tab-vault" class="tab-panel">
+                <div class="vault-box">
+                    <h2 style="color: var(--text-dark); font-weight:700;">Your Sister Performance Score</h2>
+                    <p id="final-badge" style="margin:15px 0; font-family:var(--font-sans); font-size:1.4rem; font-weight:700; color: var(--pink-accent);">Complete the sibling test in the interactive tab first!</p>
+                    
+                    <button class="vault-btn" onclick="crackVault()">Unlock Surprise 🎁</button>
+                </div>
+            </div>
+
+            <!-- 🎁 THE VAULT SURPRISE IMMERSIVE POPUP MODAL -->
+            <div class="vault-popup-modal" id="vaultPopupModal" onclick="closeVaultPopup()">
+                <div class="vault-popup-content" onclick="event.stopPropagation()">
+                    <!-- Left-side circular floating exit arrow -->
+                    <button class="vault-back-arrow-icon" onclick="closeVaultPopup()" title="Go Back">←</button>
+                    
+                    <!-- Single Big Animated Image Frame with Unclipped Scaled Dimensions -->
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200" alt="Ammu's Elegant Birthday Highlight Layout">
+
+                    <!-- Caption Details underneath the layout -->
+                    <div class="vault-popup-caption-box">
+                        <h3 class="vault-popup-title">Cheers to You, Ammu! 🥂✨</h3>
+                        <p class="vault-popup-text">
+                            May your birthday be filled with endless light, joy, and monumental milestones. Thank you for being the absolute best sister anyone could ever ask for. I've always got your back through thick and thin! ❤️
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const customLetter = "Hey Ammu, on your special day, I want to take a moment to celebrate how incredibly exceptional you are. Through every phase of growth, shared argument, inside joke, and quiet triumph, you've remained my anchor and favorite person. Here's to a magnificent year ahead! Happy Birthday! ✨🌸";
+        let textIndex = 0;
+        let typewriterStarted = false;
+
+        function runTypewriter() {
+            if (textIndex < customLetter.length) {
+                document.getElementById("typed-text").innerHTML += customLetter.charAt(textIndex);
+                textIndex++;
+                setTimeout(runTypewriter, 35);
+            }
+        }
+
+        function unlockApp() {
+            document.getElementById("landing-screen").style.transform = "translateY(-100vh)";
+            document.getElementById("inner-dashboard").style.transform = "translateY(0)";
+            const audio = document.getElementById("bg-music");
+            audio.play().then(() => {
+                document.getElementById("music-icon").innerText = "⏸️";
+                document.getElementById("music-text").innerText = "PAUSE AUDIO";
+            }).catch(()=>{});
+            
+            setTimeout(() => {
+                if(!typewriterStarted && document.getElementById("tab-letter").classList.contains("active")) {
+                    runTypewriter();
+                    typewriterStarted = true;
+                }
+            }, 800);
+            initAmbientEmojis(); 
+        }
+
+        function switchTab(e, id) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            e.currentTarget.classList.add('active');
+
+            if (id === 'tab-letter' && !typewriterStarted) {
+                setTimeout(runTypewriter, 300);
+                typewriterStarted = true;
+            }
+        }
+
+        /* --- 🔍 LIGHTBOX MODULE FUNCTIONS --- */
+        function openLightbox(cardElement, type) {
+            const modal = document.getElementById("lightboxModal");
+            const mediaVault = document.getElementById("lightboxMediaVault");
+            const captionBox = document.getElementById("lightboxCaption");
+            
+            const captionText = cardElement.querySelector(".media-overlay-details p").innerText;
+            const sourceMedia = cardElement.querySelector(type === 'video' ? 'video' : 'img');
+            const fullResSource = sourceMedia.getAttribute("data-src");
+
+            mediaVault.innerHTML = ""; 
+            captionBox.innerText = captionText;
+
+            if (type === 'video') {
+                mediaVault.innerHTML = `<video src="${fullResSource}" controls autoplay></video>`;
+            } else {
+                mediaVault.innerHTML = `<img src="${fullResSource}" alt="Full preview">`;
+            }
+
+            modal.style.display = "flex";
+            setTimeout(() => {
+                modal.classList.add("active");
+            }, 10);
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById("lightboxModal");
+            const mediaVault = document.getElementById("lightboxMediaVault");
+            modal.classList.remove("active");
+            setTimeout(() => {
+                mediaVault.innerHTML = ""; 
+                modal.style.display = "none";
+            }, 400);
+        }
+
+        /* --- 🎁 VAULT POPUP CONTROLLERS --- */
+        function crackVault() {
+            confetti({ particleCount: 180, spread: 90, origin: { y: 0.6 }, colors: ['#FF65A3', '#FFF0F5', '#B6835C'] });
+            const vaultModal = document.getElementById("vaultPopupModal");
+            vaultModal.style.display = "flex";
+            setTimeout(() => {
+                vaultModal.classList.add("active");
+            }, 10);
+        }
+
+        function closeVaultPopup() {
+            const vaultModal = document.getElementById("vaultPopupModal");
+            vaultModal.classList.remove("active");
+            setTimeout(() => {
+                vaultModal.style.display = "none";
+            }, 400);
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("bg-music");
+            console.log("Current status: ", audio.paused ? "Paused" : "Playing");
+    
+            if(audio.paused) {
+                audio.play().catch(error => {
+                    console.log("Playback failed: ", error);
+                    alert("Please interact with the page (click anywhere) to enable audio.");
+                });
+                document.getElementById("music-icon").innerText = "⏸️";
+                document.getElementById("music-text").innerText = "PAUSE AUDIO";
+            } else {
+                audio.pause();
+                document.getElementById("music-icon").innerText = "🎵";
+                document.getElementById("music-text").innerText = "PLAY AUDIO";
+            }
+        }
+
+        function initAmbientEmojis() {
+            const container = document.getElementById("ambient-emoji-wrapper");
+            const pool = ["🎈", "✨", "🎂", "👑", "🥳", "💖", "🌸", "🎀"];
+            
+            setInterval(() => {
+                const el = document.createElement("div");
+                el.className = "ambient-emoji";
+                el.innerText = pool[Math.floor(Math.random() * pool.length)];
+                el.style.left = Math.random() * 100 + "vw";
+                const size = Math.random() * 1.2 + 1; 
+                el.style.fontSize = size + "rem";
+                const duration = Math.random() * 4 + 7; 
+                el.style.animationDuration = duration + "s";
+                container.appendChild(el);
+                setTimeout(() => { el.remove(); }, duration * 1000);
+            }, 550); 
+        }
+
+        const quizSet = [
+            { q: "What is my absolute top choice weapon to annoy you?", choices: ["Stealing your food/snacks 🍿", "Blasting loud music 🎵", "Mimicking your voice 🎭"], correct: 0 },
+            { q: "When we get into a random sibling argument, who usually wins?", choices: ["You (with pure dramatic energy) 👑", "Me (never happens) ❌", "We both just walk away laughing 😂"], correct: 0 }
+        ];
+        let score = 0, currentQ = 0;
+
+        function loadQuiz() {
+            if(currentQ >= quizSet.length) {
+                document.getElementById("quiz-box").innerHTML = "<p style='color:var(--pink-accent); font-weight:700; text-align:center;'>Assessment Finalized. Check the Vault Tab!</p>";
+                document.getElementById("final-badge").innerText = score === quizSet.length ? "Certified Expert Sister 😎" : "Certified Drama Queen 👑";
+                return;
+            }
+            const data = quizSet[currentQ];
+            document.getElementById("quiz-question").innerText = data.q;
+            const container = document.getElementById("quiz-options");
+            container.innerHTML = "";
+            data.choices.forEach((c, i) => {
+                const btn = document.createElement("button");
+                btn.className = "premium-opt-btn";
+                btn.innerText = c;
+                btn.onclick = () => {
+                    if(i === data.correct) { btn.classList.add("correct"); score++; }
+                    else { btn.classList.add("wrong"); }
+                    setTimeout(() => { currentQ++; loadQuiz(); }, 1200);
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        function runVerdict(txt) { document.getElementById("verdict-box").innerText = txt; }
+
+        loadQuiz();
+    </script>
+</body>
+</html>
