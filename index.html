@@ -428,6 +428,30 @@ font-family: 'Dancing Script', cursive;
         }
 
         /* --- 💌 TAB 2: MESSAGE VIEW --- */
+        #tab-letter{
+    position: relative;
+    background: url('images/img5.jpeg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+#tab-letter::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.75); /* overlay */
+    backdrop-filter: blur(3px);
+}
+
+.simple-message-container{
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    box-shadow: none;
+}
         .simple-message-container {
             max-width: 750px;
             margin: 40px auto;
@@ -701,7 +725,7 @@ font-family: 'Dancing Script', cursive;
     <!-- 🌟 HERO ENTRANCE SCREEN -->
     <section id="landing-screen">
         <div class="hero-bg"></div>
-        <h1 class="hero-title">Happy Birthday Ammuuuuu ❤️</h1>
+        <h1 class="hero-title">Happy Birthday Chechiiiiii ❤️</h1>
         <p class="hero-subtitle">To the most incredible person in my world. Here's a curated digital archive celebrating you.</p>
         <button class="cta-btn" onclick="unlockApp()">Explore the Experience ✨</button>
     </section>
@@ -915,7 +939,7 @@ font-family: 'Dancing Script', cursive;
     </main>
 
     <script>
-        const customLetter = "Hey Ammu, on your special day, I want to take a moment to celebrate how incredibly exceptional you are. Through every phase of growth, shared argument, inside joke, and quiet triumph, you've remained my anchor and favorite person. Here's to a magnificent year ahead! Happy Birthday! ✨🌸";
+        const customLetter = "Hey Sis, on your special day, I want to take a moment to celebrate how incredibly exceptional you are. Through every phase of growth, shared argument, inside joke, and quiet triumph, you've remained my anchor and favorite person. Here's to a magnificent year ahead! Happy Birthday! ✨🌸,LOVE YOU DIII Mwah 😚💕";
         let textIndex = 0;
         let typewriterStarted = false;
 
@@ -1030,7 +1054,7 @@ font-family: 'Dancing Script', cursive;
 
         function initAmbientEmojis() {
             const container = document.getElementById("ambient-emoji-wrapper");
-            const pool = ["🎈", "✨", "🎂", "👑", "🥳", "💖", "🌸", "🎀"];
+            const pool = ["🎈", "✨", "🎂", "👑", "🥳", "💖", "🌸", "🎀","🎀","💋","😘","🎈", "✨", "🎂", "👑", "🥳", "💖", "🌸", "🎀","🎀","💋","😘"];
             
             setInterval(() => {
                 const el = document.createElement("div");
